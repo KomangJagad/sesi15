@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Ajax 01</title>
+</head>
+<body>
+
+
+
+    <div class="nama"></div>
+    <script src="jQuery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let urlapi = "https://webpro.ptov.my.id/api/curduser.php?aksi=get";
+
+            $.ajax({
+                url: urlapi,
+                success: function(dta, status, xhr){
+                    console.log(dta);
+                    $(" .nama").html(dta.isi[0][1]);
+                    
+                }
+            });
+            
+            //$.get();
+            //$.post();
+        
+        });
+    </script>
+
+
+
+
+    
+    
+</body>
+</html>
